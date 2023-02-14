@@ -1,5 +1,8 @@
 #!/bin/bash
 
-. /utils/go.sh
+. /utils/wasm.sh
 
-build
+build "${FILENAME}"
+ret=$?
+echo -n $ret > /out/ret-code
+exit $ret
